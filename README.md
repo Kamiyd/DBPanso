@@ -4,7 +4,7 @@
 
 > 本项目仅供学习和技术研究。请遵守目标站点的服务条款、版权要求及所在地法律法规，请勿用于传播未经授权的内容或谋利。
 
-## 当前功能
+## 功能
 
 - 在豆瓣影片详情页读取主片名和年份，并在标题位置加入快捷搜索按钮
 - 在可用时提供「主片名 + 年份」和「完整片名」搜索选项
@@ -31,15 +31,7 @@
 5. 点击「加载已解压的扩展程序」。
 6. 选择解压后包含 `manifest.json` 的目录。
 
-GitHub 自动附带的 `Source code (zip)` 是源码快照，不是精简后的 Chrome 安装包。
-
-如需直接加载源码，也可以下载或克隆本仓库，然后按以下方式加载：
-
-1. 下载并解压本项目。
-2. 打开 `chrome://extensions/`；Edge 用户打开 `edge://extensions/`。
-3. 开启「开发者模式」。
-4. 点击「加载已解压的扩展程序」。
-5. 选择包含 `manifest.json` 的项目根目录。
+GitHub 自动附带的 `Source code (zip)` 是源码快照；安装时请下载文件名带有 `-chrome` 的 Release 包。
 
 ## 使用
 
@@ -57,7 +49,7 @@ GitHub 自动附带的 `Source code (zip)` 是源码快照，不是精简后的 
 2. 在扩展内解析 Telegram 公开预览页，提取消息标题、时间、标签和链接。
 3. 在本地完成关键词过滤、链接分类、提取码识别、去重和排序。
 
-扩展不使用 Telegram Bot API，也不需要本项目的自建搜索服务。频道配置、并发数、排序和音效偏好等设置保存在 `chrome.storage.local` 中。
+搜索由浏览器扩展直接完成，不使用 Telegram Bot API 或额外的搜索服务。频道配置、并发数、排序和音效偏好等设置保存在 `chrome.storage.local` 中。
 
 ## 链接状态说明
 
@@ -69,22 +61,16 @@ GitHub 自动附带的 `Source code (zip)` 是源码快照，不是精简后的 
 
 同步会向本地列表追加新频道，不会删除已有频道或覆盖用户设置的启停状态。
 
-## 与 PanSou 的关系
-
-本扩展的功能和技术设计参考了 [PanSou](https://github.com/fish2018/pansou) 的公开源码，包括 Telegram 公开频道搜索、预览页解析、网盘链接识别和结果去重等思路。
-
-当前扩展不调用 PanSou 的 `/api/search`，也不依赖它的 Go 服务、缓存层或聚合插件。搜索请求由扩展直接发往 Telegram。与 PanSou 相关的运行时请求只有通过 GitHub API 读取上述 Issue 频道清单。
-
-感谢 PanSou 及其贡献者的开源工作。
-
 ## 开源依赖与致谢
 
-- [PanSou](https://github.com/fish2018/pansou) — 功能和技术设计的参考项目，MIT License
+- [PanSou](https://github.com/fish2018/pansou) — Telegram 公开频道搜索、预览页解析、网盘链接识别和结果去重等功能设计的参考项目，MIT License
 - [Cuelume](https://github.com/Danilaa1/cuelume) v0.2.2 — 扩展交互音效，MIT License；许可证位于 `vendor/cuelume/LICENSE`
 
 ## 开发
 
-当前源码无需构建，可直接作为未打包扩展加载。生成不包含本地预览、调试历史和开发权限的生产安装包：
+源码无需构建。克隆仓库后，可在浏览器扩展管理页开启开发者模式并加载项目根目录。
+
+生成发布用 ZIP：
 
 ```bash
 npm run package
