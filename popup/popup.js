@@ -10,10 +10,8 @@ const els = {
   clear: $("#btn-clear"),
   clearIcon: $("#clear-icon"),
   btnPanel: $("#btn-panel"),
-  btnAbout: $("#btn-about"),
   btnOptions: $("#btn-options"),
   panelIcon: $("#panel-icon"),
-  aboutIcon: $("#about-icon"),
   optionsIcon: $("#options-icon"),
   sound: $("#btn-sound"),
 };
@@ -57,12 +55,6 @@ els.clearIcon.innerHTML = iconHtml("close", {
 });
 
 els.panelIcon.innerHTML = iconHtml("panel-right-open", {
-  size: 13,
-  color: "currentColor",
-  strokeWidth: 2.15,
-});
-
-els.aboutIcon.innerHTML = iconHtml("sparkles", {
   size: 13,
   color: "currentColor",
   strokeWidth: 2.15,
@@ -160,14 +152,6 @@ els.btnPanel.addEventListener("click", () => {
 els.btnOptions.addEventListener("click", () => {
   playSound("settings");
   chrome.runtime.openOptionsPage();
-});
-
-els.btnAbout.addEventListener("click", () => {
-  playSound("tap");
-  const url = chrome.runtime.getURL("index.html");
-  if (chrome.tabs?.create) chrome.tabs.create({ url });
-  else window.open(url, "_blank", "noopener,noreferrer");
-  window.close();
 });
 
 els.sound.addEventListener("click", async () => {

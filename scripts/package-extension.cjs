@@ -18,10 +18,7 @@ const rootFiles = [
   "README.md",
   "THIRD_PARTY_NOTICES.md",
   "background.js",
-  "index.html",
   "manifest.json",
-  "showcase.css",
-  "showcase.js",
 ];
 
 const runtimeDirs = [
