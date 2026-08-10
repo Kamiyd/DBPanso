@@ -90,7 +90,7 @@ GitHub 自动附带的 `Source code (zip)` 是源码快照，不是精简后的 
 npm run package
 ```
 
-输出位于 `dist/DBPanso-v<version>/` 和 `dist/DBPanso-v<version>-chrome.zip`。发布工作流会在推送 `v*` 标签时自动生成 Release 安装包和 SHA-256 校验文件。
+输出位于 `dist/DBPanso-v<version>/` 和 `dist/DBPanso-v<version>-chrome.zip`。正式版本会在 GitHub Releases 中提供生产 ZIP 和 SHA-256 校验文件。
 
 ## 限制
 
