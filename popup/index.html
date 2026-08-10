@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>豆瓣盘搜</title>
+    <link rel="stylesheet" href="../styles/theme.css?v=20260804-laser-fade-loop-2" />
+    <link rel="stylesheet" href="popup.css?v=20260809-dbpanso-1" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="brand-line">
+        <div class="brand-wordmark">
+          <img
+            class="brand-logo"
+            src="../icons/icon-laser-v5-32.png"
+            srcset="../icons/icon-laser-v5-32.png 1x, ../icons/icon-laser-v5-48.png 2x, ../icons/icon-laser-v5-128.png 3x"
+            alt=""
+            width="24"
+            height="24"
+            draggable="false"
+          />
+          <strong>豆瓣盘搜</strong>
+        </div>
+        <div class="header-actions">
+          <button
+            type="button"
+            class="header-action"
+            id="btn-about"
+            title="项目介绍"
+            aria-label="打开项目介绍"
+          >
+            <span id="about-icon" aria-hidden="true"></span>
+          </button>
+          <button
+            type="button"
+            class="sound-toggle"
+            id="btn-sound"
+            title="关闭音效"
+            aria-label="关闭音效"
+            aria-pressed="true"
+            data-cuelume-toggle="toggle"
+          ></button>
+          <button
+            type="button"
+            class="header-action"
+            id="btn-options"
+            title="频道设置"
+            aria-label="打开频道设置"
+          >
+            <span id="options-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </header>
+      <p class="desc">输入电影名，或在豆瓣电影页直接使用已识别标题。</p>
+
+      <form id="form" class="form" autocomplete="off">
+        <button type="submit" class="search-submit" id="btn-search" aria-label="搜索" title="搜索">
+          <span id="search-icon" aria-hidden="true"></span>
+        </button>
+        <input
+          id="kw"
+          type="search"
+          placeholder="搜电影、剧集…"
+          aria-label="电影或剧集名称"
+          spellcheck="false"
+          data-cuelume-press="chime"
+        />
+        <button
+          type="button"
+          class="clear-input"
+          id="btn-clear"
+          aria-label="清除搜索词"
+          title="清除"
+          hidden
+        >
+          <span id="clear-icon" aria-hidden="true"></span>
+        </button>
+      </form>
+
+      <div class="links">
+        <button type="button" class="link-btn" id="btn-panel">
+          <span class="link-icon" id="panel-icon" aria-hidden="true"></span>
+          <span class="link-label">打开侧边栏</span>
+        </button>
+      </div>
+    </div>
+    <script type="module" src="popup.js?v=20260809-dbpanso-1"></script>
+  </body>
+</html>

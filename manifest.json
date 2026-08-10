@@ -1,0 +1,112 @@
+{
+  "manifest_version": 3,
+  "name": "豆瓣盘搜 · DBPanso",
+  "version": "1.4.0",
+  "description": "在豆瓣电影页一键搜索 Telegram 公开频道网盘资源。仅供学习研究。",
+  "icons": {
+    "16": "icons/icon-laser-v5-16.png",
+    "32": "icons/icon-laser-v5-32.png",
+    "48": "icons/icon-laser-v5-48.png",
+    "128": "icons/icon-laser-v5-128.png"
+  },
+  "action": {
+    "default_title": "豆瓣盘搜",
+    "default_popup": "popup/index.html",
+    "default_icon": {
+      "16": "icons/icon-laser-v5-16.png",
+      "32": "icons/icon-laser-v5-32.png",
+      "48": "icons/icon-laser-v5-48.png",
+      "128": "icons/icon-laser-v5-128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "sidepanel/index.html"
+  },
+  "options_ui": {
+    "page": "options/index.html",
+    "open_in_tab": true
+  },
+  "permissions": [
+    "storage",
+    "sidePanel",
+    "activeTab",
+    "windows"
+  ],
+  "host_permissions": [
+    "https://api.github.com/*",
+    "https://t.me/*",
+    "https://pan.baidu.com/*",
+    "https://pan.quark.cn/*",
+    "https://alipan.com/*",
+    "https://*.alipan.com/*",
+    "https://aliyundrive.com/*",
+    "https://*.aliyundrive.com/*",
+    "https://cloud.189.cn/*",
+    "https://drive.uc.cn/*",
+    "https://yun.139.com/*",
+    "https://www.yun.139.com/*",
+    "https://caiyun.139.com/*",
+    "https://www.caiyun.139.com/*",
+    "https://caiyun.feixin.10086.cn/*",
+    "https://115.com/*",
+    "https://*.115.com/*",
+    "https://115cdn.com/*",
+    "https://*.115cdn.com/*",
+    "https://anxia.com/*",
+    "https://*.anxia.com/*",
+    "https://pan.xunlei.com/*",
+    "https://123684.com/*",
+    "https://*.123684.com/*",
+    "https://123865.com/*",
+    "https://*.123865.com/*",
+    "https://123685.com/*",
+    "https://*.123685.com/*",
+    "https://123912.com/*",
+    "https://*.123912.com/*",
+    "https://123pan.com/*",
+    "https://*.123pan.com/*",
+    "https://123592.com/*",
+    "https://*.123592.com/*",
+    "https://mypikpak.com/*",
+    "https://*.mypikpak.com/*",
+    "https://movie.douban.com/*",
+    "https://www.douban.com/*",
+    "https://*.douban.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://movie.douban.com/subject/*",
+        "https://www.douban.com/subject/*"
+      ],
+      "js": [
+        "content/inject.js"
+      ],
+      "css": [
+        "content/douban.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "lib/sound.js",
+        "vendor/cuelume/index.js",
+        "vendor/cuelume/audio/engine.js",
+        "vendor/cuelume/interactions/bind.js",
+        "vendor/cuelume/sounds/recipes.js"
+      ],
+      "matches": [
+        "https://movie.douban.com/*",
+        "https://www.douban.com/*",
+        "https://*.douban.com/*"
+      ]
+    }
+  ]
+}

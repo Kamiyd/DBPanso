@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>豆瓣盘搜</title>
+    <link rel="stylesheet" href="../styles/theme.css?v=20260804-laser-fade-loop-2" />
+    <link rel="stylesheet" href="sidepanel.css?v=20260809-dbpanso-1" />
+  </head>
+  <body>
+    <header class="panel-header">
+      <div class="panel-headline" id="panel-headline">
+        <div class="brand-wordmark">
+          <strong id="panel-title" aria-live="polite">等待搜索</strong>
+        </div>
+        <div class="panel-actions">
+          <form
+            class="panel-inline-search"
+            id="panel-inline-search"
+            role="search"
+          >
+            <button
+              type="button"
+              class="panel-inline-search-trigger"
+              id="btn-inline-search"
+              title="搜索其他电影"
+              aria-label="搜索其他电影"
+              aria-expanded="false"
+              aria-controls="panel-inline-search"
+            ></button>
+            <input
+              id="panel-inline-search-input"
+              type="search"
+              autocomplete="off"
+              spellcheck="false"
+              tabindex="-1"
+              placeholder="搜索其他电影"
+              aria-label="搜索其他电影"
+            />
+            <button
+              type="button"
+              class="panel-inline-search-clear"
+              id="panel-inline-search-clear"
+              title="清空搜索词"
+              aria-label="清空搜索词"
+              aria-hidden="true"
+            ></button>
+          </form>
+          <button
+            type="button"
+            class="icon-btn"
+            id="btn-settings"
+            title="频道设置"
+            aria-label="频道设置"
+          ></button>
+          <button
+            type="button"
+            class="icon-btn sound-toggle"
+            id="btn-sound"
+            title="关闭音效"
+            aria-label="关闭音效"
+            aria-pressed="true"
+            data-cuelume-toggle="toggle"
+          ></button>
+        </div>
+      </div>
+      <div id="progress" class="progress hidden">
+        <div class="progress-bar"><div id="progress-fill" class="fill"></div></div>
+        <span id="progress-text" class="progress-text"></span>
+      </div>
+    </header>
+
+    <section class="toolbar hidden" id="toolbar">
+      <div class="tabs" id="type-tabs"></div>
+      <div class="quality-filter hidden" id="quality-filter" aria-live="polite">
+        <span class="quality-filter-label">筛选</span>
+        <div class="quality-filter-chips" id="quality-filter-chips"></div>
+        <button type="button" class="quality-filter-clear" id="quality-filter-clear">
+          清除
+        </button>
+      </div>
+      <div class="sort-row">
+        <div class="sort-group">
+          <button type="button" class="chip" data-sort="time">时间</button>
+          <button type="button" class="chip" data-sort="relevance">相关度</button>
+        </div>
+      </div>
+    </section>
+
+    <main id="results" class="results"></main>
+
+    <div id="empty" class="empty">
+      <span class="empty-laser" aria-hidden="true"></span>
+      <p class="empty-title">从电影页开始搜索</p>
+      <p class="empty-desc">
+        选择下面的热门电影，或点击顶部搜索其他影片。
+      </p>
+      <section class="recommendations" id="recommendations" aria-labelledby="recommendations-title">
+        <div class="recommendations-head">
+          <span class="recommendations-title" id="recommendations-title">豆瓣热门</span>
+          <span class="recommendations-status" id="recommendations-status">同步中</span>
+        </div>
+        <div class="recommendation-list" id="recommendation-list" aria-live="polite"></div>
+      </section>
+    </div>
+
+    <div id="error" class="alert error hidden"></div>
+
+    <script type="module" src="sidepanel.js?v=20260809-dbpanso-1"></script>
+  </body>
+</html>

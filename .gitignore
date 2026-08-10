@@ -1,0 +1,27 @@
+.DS_Store
+*.log
+.idea/
+.vscode/
+
+# Local audits and preview history
+.codex-audit/
+design-qa.md
+dev/
+dev-reload.js
+
+# Local build and signing output
+dist/
+*.zip
+*.crx
+*.pem
+
+# Historical and unreferenced icon exports
+icons/icon-laser-v3*
+icons/icon-laser-v4*
+icons/icon-laser-v5.png
+icons/icon-laser-v5-source.png
+icons/icon.svg
+icons/icon16.png
+icons/icon32.png
+icons/icon48.png
+icons/icon128.png

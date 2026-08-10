@@ -1,0 +1,7 @@
+{
+  "name": "dbpanso-extension",
+  "private": true,
+  "scripts": {
+    "package": "node scripts/package-extension.cjs"
+  }
+}

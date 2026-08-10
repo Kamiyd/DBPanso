@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="豆瓣盘搜（DBPanso）是一个在豆瓣电影页搜索 Telegram 公开频道网盘资源的开源浏览器扩展。"
+    />
+    <meta name="theme-color" content="#f3f3f2" />
+    <title>豆瓣盘搜 · DBPanso</title>
+    <link rel="icon" href="icons/icon-laser-v5-32.png" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="showcase.css?v=20260809-detail-audit-1" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="主导航">
+        <a class="brand-wordmark" href="#top" aria-label="豆瓣盘搜首页">
+          <img class="brand-logo" src="icons/icon-laser-v5-48.png" alt="" width="24" height="24" />
+          <strong>豆瓣盘搜</strong>
+        </a>
+
+        <div class="header-actions">
+          <div class="tabs header-tabs" aria-label="页面导航">
+            <a class="tab" href="#features">功能</a>
+            <a class="tab" href="#principles">说明</a>
+            <a class="tab" href="#install">安装</a>
+          </div>
+          <a class="icon-btn" href="README.md" aria-label="查看项目说明" title="查看项目说明">
+            <span data-icon="external-link" aria-hidden="true"></span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-shell" id="main">
+      <section class="card intro-card" id="top" aria-labelledby="intro-title">
+        <div class="intro-copy">
+          <div class="q-tags" aria-label="项目标签">
+            <span class="q-tag q-tag-green">开源</span>
+            <span class="q-tag q-tag-gray">Chromium 扩展</span>
+          </div>
+          <h1 id="intro-title">在豆瓣电影页，一键搜索公开频道资源</h1>
+          <p>
+            片名识别、Telegram 公开频道搜索和网盘筛选都留在浏览器侧边栏里，操作路径和插件本身完全一致。
+          </p>
+          <div class="intro-actions">
+            <a class="btn primary" href="#install">
+              <span>查看安装方法</span>
+            </a>
+            <a class="btn" href="README.md">
+              <span>阅读 README</span>
+              <span data-icon="external-link" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="demo-shell" id="search-demo" data-demo-state="typing">
+          <div class="demo-headline">
+            <strong>搜索演示</strong>
+            <div class="demo-headline-actions">
+              <span class="q-tag q-tag-green" id="demo-phase">输入片名</span>
+              <button
+                class="icon-btn demo-replay"
+                id="demo-replay"
+                type="button"
+                title="重新播放演示"
+                aria-label="重新播放演示"
+              >
+                <span data-icon="rotate-ccw" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="demo-stage">
+            <div class="demo-search-row" role="search" aria-label="搜索演示">
+              <span class="demo-search-icon" data-icon="search" aria-hidden="true"></span>
+              <span class="demo-query" id="demo-query" aria-label="搜索关键词"></span>
+              <span class="demo-caret" aria-hidden="true"></span>
+              <span class="demo-search-state-icon" id="demo-search-state-icon" aria-hidden="true"></span>
+            </div>
+
+            <div class="demo-viewport">
+              <section class="demo-scan-view" id="demo-scan-view" aria-label="公开频道搜索进度">
+                <div class="demo-scan-copy">
+                  <div>
+                    <strong id="demo-status">准备搜索公开频道</strong>
+                    <span>只搜索公开网页</span>
+                  </div>
+                  <span class="demo-count" id="demo-count">0 / 3</span>
+                </div>
+
+                <div class="demo-channel-list" id="demo-channel-list">
+                  <div class="demo-channel" data-demo-channel>
+                    <span data-icon="radio" aria-hidden="true"></span>
+                    <span>Aliyun_4K_Movies</span>
+                  </div>
+                  <div class="demo-channel" data-demo-channel>
+                    <span data-icon="radio" aria-hidden="true"></span>
+                    <span>tgsearchers7</span>
+                  </div>
+                  <div class="demo-channel" data-demo-channel>
+                    <span data-icon="radio" aria-hidden="true"></span>
+                    <span>Quark_Movies</span>
+                  </div>
+                </div>
+              </section>
+
+              <section class="demo-result-view" id="demo-result-view" aria-label="整理后的资源" aria-hidden="true">
+                <div class="demo-filter-row">
+                  <div class="demo-type-tabs" aria-label="资源类型">
+                    <span class="demo-type-tab is-active">全部 <b>3</b></span>
+                    <span class="demo-type-tab">夸克 <b>1</b></span>
+                    <span class="demo-type-tab">阿里 <b>1</b></span>
+                  </div>
+                </div>
+
+                <article class="demo-result-card">
+                  <div class="demo-card-heading">
+                    <h3><mark>流浪地球 2</mark> (2023) 4K REMUX 国语</h3>
+                  </div>
+                  <div class="demo-card-tags" aria-label="画质与规格">
+                    <span class="demo-tag demo-tag-remux">REMUX</span>
+                    <span class="demo-tag demo-tag-4k">4K</span>
+                  </div>
+                  <div class="demo-card-meta">
+                    <span>Aliyun_4K_Movies</span>
+                    <span>刚刚</span>
+                  </div>
+                  <div class="demo-links">
+                    <div class="demo-link-row" style="--demo-link-order: 0">
+                      <span data-pan-icon="aliyun" aria-hidden="true"></span>
+                      <code>www.alipan.com/s/example-preview</code>
+                      <span class="demo-link-state is-ok">可达</span>
+                    </div>
+                    <div class="demo-link-row" style="--demo-link-order: 1">
+                      <span data-pan-icon="quark" aria-hidden="true"></span>
+                      <code>pan.quark.cn/s/example-preview</code>
+                      <span class="demo-link-password">9g2k</span>
+                    </div>
+                  </div>
+                </article>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <section class="card content-card" id="features" aria-labelledby="features-title">
+          <div class="section-heading">
+            <h2 id="features-title">插件里有什么</h2>
+            <p>展示页沿用插件里已经存在的交互组件。</p>
+          </div>
+          <div class="detail-list">
+            <article class="detail-row">
+              <span class="row-icon" data-icon="search" aria-hidden="true"></span>
+              <div>
+                <h3>豆瓣一键搜索</h3>
+                <p>自动读取当前电影或剧集名称。</p>
+              </div>
+            </article>
+            <article class="detail-row">
+              <span class="row-icon" data-icon="layout-grid" aria-hidden="true"></span>
+              <div>
+                <h3>按网盘类型筛选</h3>
+                <p>夸克、百度、阿里等结果分组查看。</p>
+              </div>
+            </article>
+            <article class="detail-row">
+              <span class="row-icon" data-icon="settings-2" aria-hidden="true"></span>
+              <div>
+                <h3>频道管理</h3>
+                <p>添加、启停和检测公开频道。</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="card content-card" id="principles" aria-labelledby="principles-title">
+          <div class="section-heading">
+            <h2 id="principles-title">开源说明</h2>
+            <p>保持项目简单，也把边界写清楚。</p>
+          </div>
+          <div class="detail-list">
+            <article class="detail-row">
+              <span class="row-icon" data-icon="hard-drive" aria-hidden="true"></span>
+              <div>
+                <h3>浏览器本地运行</h3>
+                <p>搜索、去重和相关度整理在扩展中完成。</p>
+              </div>
+            </article>
+            <article class="detail-row">
+              <span class="row-icon" data-icon="radio" aria-hidden="true"></span>
+              <div>
+                <h3>读取公开频道</h3>
+                <p>只访问公开网页，不使用 Telegram Bot API。</p>
+              </div>
+            </article>
+            <article class="detail-row">
+              <span class="row-icon" data-icon="database" aria-hidden="true"></span>
+              <div>
+                <h3>配置保存在本地</h3>
+                <p>频道列表和扩展设置保存在浏览器中。</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <section class="card install-card" id="install" aria-labelledby="install-title">
+        <div class="install-intro">
+          <div class="section-heading">
+            <h2 id="install-title">开发者模式安装</h2>
+            <p>当前版本支持 Chrome 114+ 和新版 Edge，安装时选择项目根目录。</p>
+          </div>
+          <div class="address-row">
+            <code id="extensions-address">chrome://extensions/</code>
+            <button class="copy-button" id="copy-address" type="button">
+              <span class="copy-icon" data-icon="copy" aria-hidden="true"></span>
+              <span class="copy-label">复制</span>
+            </button>
+          </div>
+          <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="install-steps" aria-label="安装步骤">
+          <article class="detail-row setup-row">
+            <span class="row-icon" data-icon="download" aria-hidden="true"></span>
+            <div>
+              <h3>下载并解压代码</h3>
+              <p>把项目放在一个固定目录。</p>
+            </div>
+          </article>
+          <article class="detail-row setup-row">
+            <span class="row-icon" data-icon="settings" aria-hidden="true"></span>
+            <div>
+              <h3>开启开发者模式</h3>
+              <p>打开扩展管理页右上角的开关。</p>
+            </div>
+          </article>
+          <article class="detail-row setup-row">
+            <span class="row-icon" data-icon="folder-open" aria-hidden="true"></span>
+            <div>
+              <h3>加载项目目录</h3>
+              <p>点击“加载已解压的扩展程序”。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand-wordmark" href="#top">
+        <img class="brand-logo" src="icons/icon-laser-v5-32.png" alt="" width="22" height="22" />
+        <strong>豆瓣盘搜</strong>
+      </a>
+      <p>MIT License · 仅供学习研究</p>
+      <a class="footer-link" href="README.md">项目说明</a>
+    </footer>
+
+    <script type="module" src="showcase.js?v=20260809-detail-audit-1"></script>
+  </body>
+</html>

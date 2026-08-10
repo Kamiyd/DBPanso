@@ -1,0 +1,121 @@
+:root {
+  color-scheme: light;
+  --page: #fbfbfa;
+  --canvas: #f3f3f2;
+  --surface: #ffffff;
+  --surface-subtle: #f7f7f6;
+  --rail: #e9e9e8;
+  --border: #e6e7e4;
+  --border-strong: #d8dbd7;
+  --ink: #171a18;
+  --ink-soft: #555b57;
+  --muted: #858b87;
+  --accent: #10b981;
+  --accent-hover: #0ca572;
+  --accent-deep: #087a57;
+  --accent-soft: #e8f8f2;
+  --accent-border: #a6e7cf;
+  --laser-mint: #8fe7d5;
+  --laser-lilac: #c5a8ff;
+  --laser-blue: #93cfff;
+  --laser-lime: #b9f58e;
+  --laser-mint-strong: #73dfc7;
+  --laser-lilac-strong: #b99aff;
+  --laser-blue-strong: #7fc3ff;
+  --laser-lime-strong: #a8ed72;
+  --laser-progress: linear-gradient(
+    90deg,
+    var(--laser-mint) 0%,
+    var(--laser-blue) 28%,
+    var(--laser-lilac) 54%,
+    #f0b6d3 75%,
+    var(--laser-lime) 100%
+  );
+  /* Two identical, dim-to-bright passes keep the focus border alive without a reset seam. */
+  --laser-focus-track: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(143, 231, 213, 0.1) 6%,
+    rgba(147, 207, 255, 0.56) 13%,
+    rgba(197, 168, 255, 0.96) 20%,
+    rgba(240, 182, 211, 0.82) 26%,
+    rgba(185, 245, 142, 0.38) 32%,
+    rgba(143, 231, 213, 0.1) 38%,
+    transparent 50%,
+    transparent 50%,
+    rgba(143, 231, 213, 0.1) 56%,
+    rgba(147, 207, 255, 0.56) 63%,
+    rgba(197, 168, 255, 0.96) 70%,
+    rgba(240, 182, 211, 0.82) 76%,
+    rgba(185, 245, 142, 0.38) 82%,
+    rgba(143, 231, 213, 0.1) 88%,
+    transparent 100%
+  );
+  --laser-focus-duration: 3.2s;
+  --quality-selected: var(--accent-soft);
+  --quality-selected-border: var(--accent-border);
+  --quality-selected-shadow: rgba(16, 185, 129, 0.16);
+  --danger: #b0443c;
+  --danger-soft: #fff0ee;
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-md: 13px;
+  --pill: 999px;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-mono: "SF Mono", "Cascadia Code", ui-monospace, Menlo, Consolas,
+    monospace;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 0.14s;
+  --dur: 0.18s;
+  --dur-toggle: 0.24s;
+  --dur-enter: 0.28s;
+  --dur-slide: 0.38s;
+  --stagger: 22ms;
+  --hover-lift: -1px;
+  --press-scale: 0.98;
+  --enter-offset: 5px;
+  --shadow-sm: 0 1px 2px rgba(20, 24, 21, 0.04),
+    0 6px 18px rgba(20, 24, 21, 0.04);
+  --shadow: 0 2px 4px rgba(20, 24, 21, 0.04),
+    0 14px 34px rgba(20, 24, 21, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@keyframes field-laser-flow {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 0 0, 100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
