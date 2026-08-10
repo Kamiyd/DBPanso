@@ -1,5 +1,5 @@
 /**
- * 豆瓣电影 subject 页注入脚本 v1.1.5
+ * 豆瓣电影 subject 页注入脚本 v1.1.6
  * 经典 IIFE，音效模块通过动态 import 加载
  */
 (function () {
@@ -7,7 +7,7 @@
 
   if (window.__dbPansoDouban) return;
   window.__dbPansoDouban = true;
-  document.documentElement.setAttribute("data-dbp", "1.1.5");
+  document.documentElement.setAttribute("data-dbp", "1.1.6");
 
   var contentSound = null;
   var contentSoundReady = null;

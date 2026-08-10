@@ -1,0 +1,13 @@
+/* 豆瓣电影广告位：在页面开始渲染时隐藏，兼容后续动态插入。 */
+
+[id^="dale_"],
+[ad-status],
+[data-sell-type][data-type],
+iframe[src*="ad.doubanio.com"],
+iframe[src*="googlesyndication.com"],
+ins.adsbygoogle,
+#gdt-ad-container,
+.channel_promo,
+.ad {
+  display: none !important;
+}

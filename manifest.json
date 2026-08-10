@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "豆瓣盘搜 · DBPanso",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "在豆瓣电影页一键搜索 Telegram 公开频道网盘资源。仅供学习研究。",
   "icons": {
     "16": "icons/icon-laser-v5-16.png",
@@ -78,6 +78,17 @@
     "https://*.douban.com/*"
   ],
   "content_scripts": [
+    {
+      "matches": [
+        "https://movie.douban.com/*",
+        "https://www.douban.com/subject/*"
+      ],
+      "css": [
+        "content/douban-ads.css"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    },
     {
       "matches": [
         "https://movie.douban.com/subject/*",
